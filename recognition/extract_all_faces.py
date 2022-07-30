@@ -13,6 +13,7 @@ for img_path in image_paths:
     detected_faces_desc = RetinaFace.detect_faces(str(img_path))
     if type(detected_faces_desc) != dict:
         continue
+    print(img_path.name)
 
     for face_details in detected_faces_desc.values():
 
@@ -22,7 +23,7 @@ for img_path in image_paths:
 
         face_roi = face_details['facial_area']
         try:
-            cropped_face_img = CustomCrop(width=300, height=300, face_percent=80).crop(str(img_path), *face_roi)
+            cropped_face_img = CustomCrop(width=224, height=224, face_percent=90).crop(str(img_path), *face_roi)
         except Exception:
             continue
 
