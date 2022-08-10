@@ -7,3 +7,5 @@ IMG_20191102_170301.jpg
 models.txt
 images/test/Grafiti
 images/results
+classification/vgg/trained_vgg_on_girls
+images/results*/
